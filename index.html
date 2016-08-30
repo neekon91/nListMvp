@@ -3,9 +3,70 @@
 <head>
 <!-- <link rel="stylesheet" href="./bootstrap/bootstrap-3.3.7-dist/css/bootswatch.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<style type="text/css">
+  * {
+    font-family: 'Lato', sans-serif;
+  }
+  .container, .sidebar {
+    float: right;
+  }
+  .container {
+    width: 75%;
+  }
+  .sidebar {
+    width: 25%;
+  }
+  h1 {
+    font-weight: lighter;
+  }
+  h1 span {
+    font-weight: 800;
+  }
+  input {
+    border-radius: 10px;
+  }
+  th {
+    font-size: 18px;
+  }
+</style>
   <title></title>
 </head>
 <body>
-  <p>out here</p>
+  <div class="container" ng-controller="contr as up">
+    <h1 align="center"><img src="./image/check.png" alt="Get Busy" height="50" width="60">WORK<span>OUT</span>APP</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Workout</th>
+            <th>Day</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td><input class="form-control" ng-model="listItem.item" placeholder="Let's do this"></td>
+          <td><input class="form-control" ng-model="listItem.dueDate" placeholder="Due Date"></td>
+        </tbody>
+      </table>
+  </div>
+  <div class="sidebar">
+    <center><a href="" class="btn btn-info" ng-click="showme===true ? showme = false : showme = true">Music</a>
+    <!-- <button class="btn btn-info" ng-click="showme=false">Kill The Tunes</button> -->
+    <button class="btn btn-info" ng-click="showtime===true ? showtime = false : showtime = true">Que tiempo
+      
+    </button></center>
+    
+    <div class="wrapper">
+      <center><p ng-hide="showme">Let's Kick Back and Listen to Tunes</p></center>
+      <p ng-show="showme">
+        <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253267033&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+
+        <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253201834&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+      </p>
+      <center><p ng-hide="showtime">What Time is it?</p></center>
+      <p ng-show="showtime">
+      <span class="wtb-ew-v1" style="width: 369px; display:block; margin: 0 auto"><script src="http://www.worldtimebuddy.com/clock_widget.js?h=0&bc=8BA1BB&cn=&wt=c2"></script><i><a href="http://www.worldtimebuddy.com/">World Clock</a></i><noscript><a href="http://www.worldtimebuddy.com/">World Clock</a></noscript><script>window[wtb_event_widgets.pop()].init()</script></span>
+      </p>
+    </div>
+  </div>
 </body>
 </html>
